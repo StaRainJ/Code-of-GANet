@@ -14,6 +14,14 @@ We provide the model trained on YFCC100M and SUN3D described in our paper. Run t
 ```bash
 bash test.sh
 ```
+### Test model on your own data-- see './Data'
+```bash
+python main4OwnData.py --model_path="./log/main.py/test/" 
+```
+
+### Test or train model on public  YFCC100M and SUN3D dataset
+The HDF5 file is provide by the repo zjhthu/OANet, Please follow their way to generate the training/valid/testing set.
+After generating dataset for YFCC100M/SUN3D, run the following 
 
 ### Test model on YFCC100M
 ```bash
@@ -26,15 +34,13 @@ Set `--use_ransac=True` to get results after RANSAC post-processing.
 python main.py --use_ransac=False --data_te='/data/sun3d-sift-2000-test.hdf5' --run_mode='test'
 ```
 
-### Test model on your own data-- see './Data'
-```bash
-python main4OwnData.py --model_path="./log/main.py/test/" 
-```
+
 
 
 ### Train model on YFCC100M
 
-After generating dataset for YFCC100M/SUN3D, run the tranining script.
+
+
 ```bash
 python main.py --run_mode= 'train'
 ```
